@@ -1,4 +1,4 @@
-#include "Blockchain.h"
+#include "blockchain.h"
 
 
 
@@ -14,7 +14,7 @@ int main() {
     cout << "Mining block 3..." << endl;
     bChain.AddBlock(Block(3, "Block 3 Data"));
 
-    bChain.DisplayChain();
+    bChain.CheckChainIntegrity();
 
     return 0;
 }

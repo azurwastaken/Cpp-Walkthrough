@@ -1,4 +1,4 @@
-#include "Blockchain.h"
+#include "blockchain.h"
 
 Blockchain::Blockchain() {
     _vChain.emplace_back(Block(0, "First Block"));
@@ -24,5 +24,20 @@ void Blockchain::DisplayChain() {
 
 void Blockchain::DisplaySpecificNode(int i)
 {
-    cout << _vChain[i].DisplayBlockData << endl;
+    _vChain.at(i).DisplayBlockData();
+}
+
+bool Blockchain::CheckChainIntegrity()
+{
+    unsigned long chainSize = _vChain.size();
+
+    for (unsigned long i = 1; i < chainSize ; i++)
+    {
+        if (_vChain.at(i - 1).GetHash() != _vChain.at(i).sPrevHash){
+            cout << "Chain is corrupted" << endl;
+            return false;
+        }
+    }
+    cout << "Chain is Valid" << endl;
+    return true;
 }

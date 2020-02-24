@@ -1,11 +1,11 @@
-#ifndef TESTCHAIN_BLOCKCHAIN_H
-#define TESTCHAIN_BLOCKCHAIN_H
+#ifndef BLOCKCHAIN_H
+#define BLOCKCHAIN_H
 
 #include <cstdint>
 #include <vector>
 
 
-#include "Block.h"
+#include "block.h"
 
 using namespace std;
 
@@ -17,6 +17,8 @@ class Blockchain {
 
     void DisplayChain();
     void DisplaySpecificNode(int i);
+
+    bool CheckChainIntegrity();
 
     private:
     uint32_t _nDifficulty;

@@ -1,4 +1,4 @@
-#include "Block.h"
+#include "block.h"
 #include "sha256.h"
 
 Block::Block(uint32_t nIndexIn, const string &sDataIn) : _nIndex(nIndexIn), _sData(sDataIn) {
