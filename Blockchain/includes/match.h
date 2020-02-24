@@ -3,9 +3,7 @@
 
 #include <cstdint>
 #include <iostream>
-#include <string>
-#include <sstream>
-#include <iostream>
+
 #include "team.h"
 
 using namespace std;
@@ -13,9 +11,12 @@ using namespace std;
 class Match {
 
     public:
-        Match(const string sTeamA, const string sTeamB, string sDate);
+        Match(Team sTeamA, Team sTeamB, string sDate);
 
-        string GetResult(void);
+        string GetResult();
+        string GetMatch();
+        void PrintMatch();
+
     private:
         string _sTeamA;
         string _sTeamB;

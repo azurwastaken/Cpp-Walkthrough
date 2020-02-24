@@ -7,6 +7,8 @@ INC_PATH += ./includes
 INC_NAME += block.h
 INC_NAME += blockchain.h
 INC_NAME += sha256.h
+INC_NAME += match.h
+INC_NAME += team.h
 
 CFLAGS = -Wall -Werror -Wextra -std=c++11 -stdlib=libc++ -x c++
 INC = $(addprefix $(INC_PATH)/,$(INC_NAME))
@@ -22,6 +24,10 @@ SRC_NAME += blockchain.cpp
 
 SRC_SUB += Crypt
 SRC_NAME += sha256.cpp
+
+SRC_SUB += Match
+SRC_NAME += match.cpp
+SRC_NAME += team.cpp
 
 vpath %.cpp $(SRC_PATH) $(addprefix $(SRC_PATH)/, $(SRC_SUB))
 
